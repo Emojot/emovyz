@@ -7,14 +7,17 @@ public class EmovyzConfiguration {
     private @NonNull String mToken = null;
     private String mClientId;
     private String mClientSecret;
+    private String mCompanyId;
 
-    private EmovyzConfiguration(String token){
+    private EmovyzConfiguration(String token,String companyId){
         mToken = token;
+        mCompanyId = companyId;
     }
 
-    private EmovyzConfiguration(String clientId, String clientSecret){
+    private EmovyzConfiguration(String clientId, String clientSecret,String companyId){
         mClientId = clientId;
         mClientSecret = clientSecret;
+        mCompanyId = companyId;
     }
 
     public static EmovyzConfiguration getInstance(){
@@ -24,12 +27,12 @@ public class EmovyzConfiguration {
         return mEmovyzConfiguration;
     }
 
-    public static void init(@NonNull String token){
-        mEmovyzConfiguration = new EmovyzConfiguration(token);
+    public static void init(@NonNull String token,String companyId){
+        mEmovyzConfiguration = new EmovyzConfiguration(token,companyId);
     }
 
-    public static void init(@NonNull String clientId,@NonNull String  clientSecret){
-        mEmovyzConfiguration = new EmovyzConfiguration(clientId,clientSecret);
+    public static void init(@NonNull String clientId,@NonNull String  clientSecret,String companyId){
+        mEmovyzConfiguration = new EmovyzConfiguration(clientId,clientSecret,companyId);
     }
 
     public String getToken() {
@@ -48,6 +51,10 @@ public class EmovyzConfiguration {
 
     public String getClientSecret(){
         return mClientSecret;
+    }
+
+    public String getCompanyId(){
+        return mCompanyId;
     }
 
 }

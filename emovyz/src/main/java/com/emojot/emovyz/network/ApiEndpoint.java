@@ -19,7 +19,7 @@ public interface ApiEndpoint {
     @POST("interactionData")
     Call<JsonObject> postInteractionData(@Header("Authorization") String token, @Body JsonObject interactionObject);
 
-    @GET("contextualSensor")
+    @GET("interactionBasedSurvey")
     Call<JsonObject> getContextualSurvey(@Header("Authorization") String token, @QueryMap Map<String, String> queryMap);
 
     @POST("https://dev.emojot.com:9448/oauth2/token")

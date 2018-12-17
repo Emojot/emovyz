@@ -1,6 +1,7 @@
 package com.emojot.emovyz.workflow;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.emojot.emovyz.EmovyzConfiguration;
 import com.emojot.emovyz.network.APIClient;
